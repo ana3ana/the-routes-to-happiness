@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter, Link, Route } from 'react-router-dom'
-
+import ReactDOM from 'react-dom';
 import './CSS/index.css';
 import Happy from './components/Happy';
 import Sleepy from './components/Sleepy';
@@ -16,26 +15,24 @@ class Home extends Component{
 
 <BrowserRouter>
   <div>
-    <Route path="/Guilty" component={Guilty}/>
-    <Route path="/Happy" component={Happy}/>
-    <Route path="/Sleepy" component={Sleepy}/>
-
-   <nav>
-      <ul>
+    <ul>
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="./Happy/">Happy</Link>
+          <Link to="/Happy/">Happy</Link>
         </li>
         <li>
-          <Link to="./Sleepy/">Sleepy</Link>
+          <Link to="/Sleepy/">Sleepy</Link>
         </li>
         <li>
-          <Link to="./Guilty/">Guilty</Link>
+          <Link to="/Guilty/">Guilty</Link>
         </li>
       </ul>
-    </nav>
+      <Route path="/Home" component={<nav></nav>} />
+      <Route path="/Happy" component={Happy}/>
+      <Route path="/Sleepy" component={Sleepy}/>
+      <Route path="/Guilty" component={Guilty}/>
   </div>
 </BrowserRouter>
     )
